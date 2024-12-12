@@ -2,20 +2,26 @@ import java.util.Locale;
 import java.util.Scanner;
 
 public class MoodAnalyzer {
+    String s;
 
-    private String analyzeMood(String s) {
-        String mood="happy";
+    public MoodAnalyzer() {
+    }
+    public MoodAnalyzer(String mssg) {
+        this.s=mssg;
+    }
+
+    private void analyzeMood() {
+        String mood="sad";
         if(s.toLowerCase().contains(mood.toLowerCase())){
-            return "Happy";
+            System.out.println("Sad");
         }else{
-            return "Sad";
+            System.out.println("Happy");
         }
     }
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-        MoodAnalyzer m1=new MoodAnalyzer();
-        System.out.println(m1.analyzeMood("i am very happy"));
-        System.out.println(m1.analyzeMood("i am very sad"));
+        MoodAnalyzer m1=new MoodAnalyzer("i am in any mood");
+        m1.analyzeMood();
     }
 
 
